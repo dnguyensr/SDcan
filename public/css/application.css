@@ -21,4 +21,8 @@ nav ul li {
   padding: 5px;
 }
 
+hr {
+  height: 2px;
+  background-color: purple;
 
+}
