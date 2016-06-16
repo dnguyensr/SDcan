@@ -21,9 +21,15 @@
 <body>
   <nav>
     <ul>
+      <% if current_user == nil %>
       <li><a href="/">Home</a></li>
       <li><a href='/users/login'>Login</a></li>
       <li><a href='/users/new'>Register</a></li>
+      <% else %>
+        <li><a href="/">Home</a></li>
+        <li><a href='/users/logout'>Logout</a></li>
+        <li><a href='/users/new'></a></li>
+      <% end %>
     </ul>
   </nav>
   <%= yield %>
