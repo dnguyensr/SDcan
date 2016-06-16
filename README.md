@@ -1,2 +1,2 @@
 # CANeric
-Generic community action work
+Generic community action network
