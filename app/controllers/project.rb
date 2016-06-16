@@ -13,7 +13,7 @@ post '/projects' do
 end
 
 get '/projects' do
-  # all projects
+  @projects = Project.all
   erb :'/projects/index'
 end
 
