@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :volunteers
   has_many :organizations, through: :members
   has_many :projects, through: :volunteers
+  validates :first_name, :email, :last_name, :password, presence: true
+  validates :email, uniqueness: true
 
 include BCrypt
 
