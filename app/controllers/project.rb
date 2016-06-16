@@ -1,4 +1,5 @@
 get '/projects/new' do
+@project = Project.new
   erb :'/projects/new'
 end
 

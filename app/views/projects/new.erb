@@ -12,7 +12,7 @@
     <div>Name:
     <input type="text" name="project[name]" value=<%=@project.name%>></div>
     <div>Organization:
-    <input type="text" name="project[organization]" value=<%=@project.organization%>></div>
+    <input type="integer" name="project[organization_id]" value=<%=@project.organization_id%>></div>
     <div>Location:
     <input type="text" name="project[location]" value=<%=@project.location%>></div>
     <div>Begin Date:
@@ -21,6 +21,6 @@
     <input type="date" name="project[end_date]" value=<%=@project.end_date%>></div>
     <div>Details:
     <input type="textarea" name="project[details]" value=<%=@project.details%>></div>
-    <input class="myButton" type="submit" value="Create Account">
+    <input class="myButton" type="submit" value="Create Project">
   </form>
 </div>
