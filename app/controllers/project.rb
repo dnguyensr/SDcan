@@ -3,7 +3,12 @@ get '/projects/new' do
 end
 
 post '/projects' do
-  # redirect '/projects'
+  @project = Project.new(params[:project])
+  if @project.save
+    redirect '/projects'
+  else
+    erb :'/projects/new'
+  end
 end
 
 get '/projects' do

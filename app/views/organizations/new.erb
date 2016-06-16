@@ -1,0 +1,24 @@
+<div >
+  <div class = "errors">
+    <% if @errors %>
+      <% @errors.each do |msg| %>
+      <%= msg %>
+      <% end %>
+    <% end %>
+  </div>
+
+    <h1>Join Today</h1>
+      <form action="/users" method="POST">
+        First Name:
+        <input type ="text" name="user[first_name]">
+        Last Name:
+        <input type ="text" name="user[last_name">
+        Email:
+        <input type="text" name="user[email]"><br>
+        Password:
+        <input type="password" name="user[password]"><br>
+        <input class="myButton" type="submit" value="Create Account">
+      </form>
+    </div>
+
+</div>
