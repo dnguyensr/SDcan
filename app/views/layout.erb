@@ -21,8 +21,9 @@
 <body>
   <nav>
     <ul>
-      <% if current_user == nil %>
+      <% if !current_user %>
       <li><a href="/">Home</a></li>
+      <li><a href='/projects'>Projects</a></li>
       <li><a href='/users/login'>Login</a></li>
       <li><a href='/users/new'>Register</a></li>
       <% else %>
