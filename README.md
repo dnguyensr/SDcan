@@ -1,2 +1,2 @@
-# CANeric
+# SDcan
 Generic community action network
