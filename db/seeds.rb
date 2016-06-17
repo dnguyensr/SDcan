@@ -13,6 +13,17 @@ users = 20.times.map do
                 :password   =>  'password' )
 end
 
+User.create!(first_name: 'Richie', last_name: 'Yi', email: 'richie@yi.com', password: 123)
+User.create!(first_name: 'Daniel', last_name: 'Nguyen', email: 'daniel@nguyen.com', password: 123)
+User.create!(first_name: 'Jaq', last_name: 'Sparrow', email: 'jaq@sparrow.com', password: 123)
+
+organizations = 20.times.map do
+  Organization.create!( :name  =>  Faker::StarWars.character,
+                        :type_of    =>  'non profit')
+end
+
+Organization.create!(name: 'DBC', type_of: 'for profit')
+
 projects = 20.times.map do
   Project.create!(  :name             =>  Faker::Book.title,
                     :begin_date       =>  Date.today,
@@ -35,7 +46,3 @@ volunteers = 20.times.map do
                       :project_id    =>  rand(1..20))
 end
 
-organizations = 20.times.map do
-  Organization.create!( :name  =>  Faker::StarWars.character,
-                        :type_of    =>  'non profit')
-end
