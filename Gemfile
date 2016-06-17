@@ -6,15 +6,17 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
 
 gem 'shotgun'
+#application requirements
 gem 'bcrypt'
 gem 'pry'
+gem 'stripe'
+gem 'dotenv', '~> 2.1'
 
 group :test do
   gem 'shoulda-matchers'
