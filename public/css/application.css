@@ -1,0 +1,18 @@
+a {
+  color: #6897BB
+}
+/*
+@media (min-width: 768px){
+  .column-border {
+    padding-left: 10;
+    position: static;
+    border: 1px solid black;
+  }*/
+/*  .col-border:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        border-left: 1px solid black;
+  }*/
+}

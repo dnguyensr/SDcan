@@ -1,0 +1,12 @@
+<h1>Latest Projects</h1>
+<% @projects.each do |project| %>
+  <div class='container col-md-4 column-border'>
+    <div><b> <a href="/projects/<%=project.id%>">Project Name: <%= project.name  %></a></b></div>
+    <div>Project Organization: <%= project.organization.name %></div>
+    <div>Located at <%= project.location %></div>
+    <div>From <%= project.begin_date %> to <%= project.end_date %></div><br>
+    <div>Details</div>
+    <div><%= project.details %></div>
+    <div>Goal: $<%= project.cost %></div>
+  </div>
+<% end %>

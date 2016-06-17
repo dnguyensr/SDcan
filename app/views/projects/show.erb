@@ -1,0 +1,25 @@
+ <div class='container'>
+   <div>Project Name: <%= @project.name  %></div>
+   <div>Project Organization: <%= @project.organization.name %></div>
+   <div>Located at <%= @project.location %></div>
+   <div>From <%= @project.begin_date %> to <%= @project.end_date %><div><br>
+   <div>Details</div>
+   <div><%= @project.details %></div>
+   <div>Goal: $<%= @project.cost %></div>
+   <% if current_user == @project.organizer %>
+   <div>
+   <form action="/projects/<%= @project.id %>" method="GET">
+   <input class="myButton" type="submit" value="Edit Project">
+   </form>
+   </div>
+    <div>
+   <form action="/projects/<%= @project.id %>" method="POST">
+   <input type="hidden" name="_method" value="delete">
+   <input class="myButton" type="submit" value="Remove Project">
+   </form>
+   </div>
+   <% end %>
+   <div>
+   <%=erb :'stripe/_charge'  %>
+   </div>
+ </div>

@@ -14,12 +14,13 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
-
+require 'bcrypt'
+require 'pry'
 require 'sinatra'
 require "sinatra/reloader" if development?
-
+require 'stripe'
 require 'erb'
-
+require 'dotenv'
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -37,9 +38,16 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
+Dotenv.load
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+
+set :publishable_key, ENV['PUBLISHABLE_KEY']
+set :secret_key, ENV['SECRET_KEY']
+
+Stripe.api_key = settings.secret_key

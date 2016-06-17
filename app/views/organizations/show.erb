@@ -1,0 +1,30 @@
+<div class='container'>
+  <div>Organization Name: <%= @organization.name  %></a></div>
+  <div>Type: <%= @organization.type_of %></div>
+</div>
+<hr>
+
+<% @organization.projects.each do |project| %>
+  <div class='container'>
+    <div><a href="/projects/<%=project.id%>">Project Name: <%= project.name  %></a></div>
+    <div>Project Organization: <%= project.organization.name %></div>
+    <div>Located at <%= project.location %></div>
+    <div>From <%= project.begin_date %> to <%= project.end_date %></div><br>
+    <div>Details</div>
+    <div><%= project.details %></div>
+    <div>Goal: $<%= project.cost %></div>
+  </div>
+<% end %>
+  <% if current_user == @organization.users.first %>
+   <div>
+  <form action="/organizations/<%= @organization.id %>/edit" method="GET">
+   <input class="myButton" type="submit" value="Edit Organization">
+   </form>
+   </div>
+    <div>
+  <form action="/organizations/<%= @organization.id %>" method="POST">
+   <input type="hidden" name="_method" value="delete">
+   <input class="myButton" type="submit" value="Delete Organization">
+   </form>
+   </div>
+   <% end %>

@@ -1,0 +1,15 @@
+<div >
+  <div class = "errors">
+    <% if @errors %>
+      <% @errors.each do |msg| %>
+      <%= msg %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h1>New Project</h1>
+  <form action="/projects" method="POST">
+  <%= erb :'/projects/_project_form'  %>
+  <input class="myButton" type="submit" value="Create Project">
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div >
+  <div class = "errors">
+    <% if @errors %>
+      <% @errors.each do |msg| %>
+      <%= msg %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h1>New organization</h1>
+  <form action="/organizations" method="POST">
+    <%= erb :'organizations/_organization_form' %>
+    <input class="myButton" type="submit" value="Create organization">
+  </form>
+</div>
