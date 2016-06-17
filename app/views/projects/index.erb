@@ -1,5 +1,5 @@
 <% @projects.each do |project| %>
-  <div class='container'>
+  <div class='container col-md-4'>
     <div><a href="/projects/<%=project.id%>">Project Name: <%= project.name  %></a></div>
     <div>Project Organization: <%= project.organization.name %></div>
     <div>Located at <%= project.location %></div>

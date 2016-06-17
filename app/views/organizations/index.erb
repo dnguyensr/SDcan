@@ -1,5 +1,5 @@
 <% @organizations.each do |organization| %>
-  <div class='container'>
+  <div class='container col-md-4'>
     <div><a href="/organizations/<%=organization.id%>">Organization Name: <%= organization.name  %></a></div>
     <div>Type: <%= organization.type_of %></div>
   </div>
