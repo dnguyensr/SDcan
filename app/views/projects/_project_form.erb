@@ -1,4 +1,3 @@
-  <form action="/projects" method="POST">
     <div>Name:
     <input type="text" name="project[name]" value=<%=@project.name%>></div>
     <div>Organization:
@@ -9,7 +8,7 @@
     <input type="date" name="project[begin_date]" value=<%=@project.begin_date%>></div>
     <div>End Date:
     <input type="date" name="project[end_date]" value=<%=@project.end_date%>></div>
+    <div>Goal:
+    <input type="number" name="project[cost]" value=<%=@project.cost%>></div>
     <div>Details:
     <input type="textarea" name="project[details]" value=<%=@project.details%>></div>
-    <input class="myButton" type="submit" value="Create Project">
-  </form>
