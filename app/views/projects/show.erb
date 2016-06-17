@@ -12,5 +12,11 @@
    <input class="myButton" type="submit" value="Edit Project">
    </form>
    </div>
+    <div>
+   <form action="/projects/<%= @project.id %>" method="POST">
+   <input type="hidden" name="_method" value="delete">
+   <input class="myButton" type="submit" value="Remove Project">
+   </form>
+   </div>
    <% end %>
  </div>

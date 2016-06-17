@@ -34,5 +34,7 @@ put '/projects/:id' do
 end
 
 delete '/projects/:id' do
-  # redirect '/projects'
+  project = Project.find(params[:id])
+  project.destroy
+  redirect '/projects'
 end
