@@ -1,18 +1,19 @@
-get '/charge' do
+get '/charge/' do
   erb :stripe
 end
 
-post '/charge' do
+post '/charge/:id' do
+  @project = Project.find(params[:id])
   @amount = 500
 
-  # customer = Stripe::Customer.create(
-  #   :email => 'customer@example.com',
-  #   :card  => params[:stripeToken]
-  # )
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :card  => params[:stripeToken]
+  )
 
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => "#{@project.id}",
     :currency    => 'usd',
     :customer    => customer
   )
