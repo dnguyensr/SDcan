@@ -19,6 +19,7 @@ projects = 20.times.map do
                     :end_date         =>  Faker::Date.forward(30),
                     :cost             =>  rand(100..3000),
                     :organization_id  => rand(1..20),
+                    :organizer_id     => rand(1..20),
                     :location         => Faker::Address.city,
                     :details          => Faker::Hacker.say_something_smart)
 end

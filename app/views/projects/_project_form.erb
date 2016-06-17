@@ -1,0 +1,17 @@
+    <div>Name:
+    <input type="text" name="project[name]" value=<%=@project.name%>></div>
+    <div>Organization:
+    <input type="integer" name="project[organization_id]" value=<%=@project.organization_id%>></div>
+    <div>Location:
+    <input type="text" name="project[location]" value=<%=@project.location%>></div>
+    <div>Begin Date:
+    <input type="date" name="project[begin_date]" value=<%=@project.begin_date%>></div>
+    <div>End Date:
+    <input type="date" name="project[end_date]" value=<%=@project.end_date%>></div>
+    <div>Goal:
+    <input type="number" name="project[cost]" value=<%=@project.cost%>></div>
+    <div>Details:
+    <input type="textarea" name="project[details]" value=<%=@project.details%>></div>
+    <div>
+    <input type="hidden" name="project[organizer_id]" value=<%=current_user.id%>
+    </div>

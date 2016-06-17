@@ -147,5 +147,12 @@ begin
   RSpec::Core::RakeTask.new(:spec)
 rescue LoadError
 end
-
 task :default  => :spec
+
+require 'dotenv/tasks'
+task :mytask => :dotenv do
+set :publishable_key, ENV['PUBLISHABLE_KEY']
+set :secret_key, ENV['SECRET_KEY']
+
+Stripe.api_key = settings.secret_key
+end

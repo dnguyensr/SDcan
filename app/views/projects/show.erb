@@ -6,4 +6,17 @@
    <div>Details</div>
    <div><%= @project.details %></div>
    <div>Goal: $<%= @project.cost %></div>
+   <% if current_user == @project.organizer %>
+   <div>
+   <form action="/projects/<%= @project.id %>" method="GET">
+   <input class="myButton" type="submit" value="Edit Project">
+   </form>
+   </div>
+    <div>
+   <form action="/projects/<%= @project.id %>" method="POST">
+   <input type="hidden" name="_method" value="delete">
+   <input class="myButton" type="submit" value="Remove Project">
+   </form>
+   </div>
+   <% end %>
  </div>

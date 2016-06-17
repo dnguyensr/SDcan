@@ -23,15 +23,20 @@ get '/organizations/:id' do
 end
 
 get '/organizations/:id/edit' do
+  @organization = Organization.find(params[:id])
   erb :'/organizations/edit'
 end
 
-patch '/organizations/:id' do
-  redirect '/organizations/:id'
+put '/organizations/:id' do
+  @organization = Organization.find(params[:id])
+  @organization.update(params[:organization])
+  redirect "/organizations/#{@organization.id}"
 end
 
 delete '/organizations/:id' do
-  # redirect '/organizations'
+  organization = Organization.find(params[:id])
+  organization.destroy
+  redirect '/organizations'
 end
 
 

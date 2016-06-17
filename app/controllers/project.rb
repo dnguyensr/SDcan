@@ -23,13 +23,18 @@ get '/projects/:id' do
 end
 
 get '/projects/:id/edit' do
+  @project = Project.find(params[:id])
   erb :'/projects/edit'
 end
 
-patch '/projects/:id' do
-  redirect '/projects/:id'
+put '/projects/:id' do
+  @project = Project.find(params[:id])
+  @project.update(params[:project])
+  redirect "/projects/#{@project.id}"
 end
 
 delete '/projects/:id' do
-  # redirect '/projects'
+  project = Project.find(params[:id])
+  project.destroy
+  redirect '/projects'
 end

@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.date      :end_date
       t.integer   :cost
       t.integer   :organization_id
+      t.integer   :organizer_id
 
       t.timestamps  null:false
     end

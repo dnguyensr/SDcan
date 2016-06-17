@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :volunteers
   has_many :organizations, through: :members
   has_many :projects, through: :volunteers
+  has_many :created_projects, foreign_key: :organizer_id
   validates :first_name, :email, :last_name, :password, presence: true
   validates :email, uniqueness: true
 
