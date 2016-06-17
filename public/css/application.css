@@ -14,4 +14,15 @@ nav ul li {
   display: inline;
 }
 
+.container {
+  border: 1px solid pink;
+  width: 80%;
+  margin: 5px;
+  padding: 5px;
+}
 
+hr {
+  height: 2px;
+  background-color: purple;
+
+}

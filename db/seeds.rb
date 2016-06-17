@@ -7,8 +7,8 @@ require 'faker'
 # Member.delete_all
 
 users = 20.times.map do
-  User.create!( :first_name =>  Faker::Name.first_name,
-                :last_name  =>  Faker::Name.last_name,
+  User.create!( :first_name =>  Faker::Superhero.name,
+                :last_name  =>  Faker::StarWars.droid,
                 :email      =>  Faker::Internet.email,
                 :password   =>  'password' )
 end
@@ -18,7 +18,9 @@ projects = 20.times.map do
                     :begin_date       =>  Date.today,
                     :end_date         =>  Faker::Date.forward(30),
                     :cost             =>  rand(100..3000),
-                    :organization_id  => rand(1..20))
+                    :organization_id  => rand(1..20),
+                    :location         => Faker::Address.city,
+                    :details          => Faker::Hacker.say_something_smart)
 end
 
 

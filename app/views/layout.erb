@@ -21,14 +21,21 @@
 <body>
   <nav>
     <ul>
-      <% if current_user == nil %>
+      <% if !current_user %>
       <li><a href="/">Home</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href='/projects'>Projects</a></li>
+      <li><a href='/organizations'>Organizations</a></li>
       <li><a href='/users/login'>Login</a></li>
       <li><a href='/users/new'>Register</a></li>
       <% else %>
         <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href='/projects'>Projects</a></li>
+        <li><a href='/projects/new'>New Project</a></li>
+        <li><a href='/organizations'>Organizations</a></li>
+        <li><a href='/organizations/new'>New Organization</a></li>
         <li><a href='/users/logout'>Logout</a></li>
-        <li><a href='/users/new'></a></li>
       <% end %>
     </ul>
   </nav>
