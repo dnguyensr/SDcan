@@ -23,6 +23,7 @@ get '/projects/:id' do
 end
 
 get '/projects/:id/edit' do
+  @project = Project.find(params[:id])
   erb :'/projects/edit'
 end
 
