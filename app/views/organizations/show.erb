@@ -15,3 +15,16 @@
     <div>Goal: $<%= project.cost %></div>
   </div>
 <% end %>
+  <% if current_user == @organization.users.first %>
+   <div>
+  <form action="/organizations/<%= @organization.id %>/edit" method="GET">
+   <input class="myButton" type="submit" value="Edit Organization">
+   </form>
+   </div>
+    <div>
+  <form action="/organizations/<%= @organization.id %>" method="POST">
+   <input type="hidden" name="_method" value="delete">
+   <input class="myButton" type="submit" value="Delete Organization">
+   </form>
+   </div>
+   <% end %>
