@@ -12,3 +12,6 @@
     <input type="number" name="project[cost]" value=<%=@project.cost%>></div>
     <div>Details:
     <input type="textarea" name="project[details]" value=<%=@project.details%>></div>
+    <div>
+    <input type="hidden" name="project[organizer_id]" value=<%=current_user.id%>
+    </div>
