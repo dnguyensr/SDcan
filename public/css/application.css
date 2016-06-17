@@ -1,4 +1,4 @@
-nav {
+/*nav {
   display: inline-block;
   border-bottom: 3px solid blue;
 }
@@ -6,23 +6,23 @@ nav {
 body {
   border: 1px solid blue;
   width: 98%;
-}
+}*/
 
-nav ul li {
+/*nav ul li {
   list-style-type: none;
   padding-left:20px;
   display: inline;
-}
+}*/
 
-.container {
+./*container {
   border: 1px solid pink;
   width: 80%;
   margin: 5px;
   padding: 5px;
-}
+}*/
 
-hr {
+/*hr {
   height: 2px;
   background-color: purple;
 
-}
+}*/
